@@ -822,22 +822,6 @@ extension Publisher {
 
 extension Publisher {
 
-    /// Transforms all elements from the upstream publisher with a provided closure.
-    ///
-    /// - Parameter transform: A closure that takes one element as its parameter and returns a new element.
-    /// - Returns: A publisher that uses the provided closure to map elements from the upstream publisher to new elements that it then publishes.
-    public func map<T>(_ transform: @escaping (Self.Output) -> T) -> Publishers.Map<Self, T>
-
-    /// Transforms all elements from the upstream publisher with a provided error-throwing closure.
-    ///
-    /// If the `transform` closure throws an error, the publisher fails with the thrown error.
-    /// - Parameter transform: A closure that takes one element as its parameter and returns a new element.
-    /// - Returns: A publisher that uses the provided closure to map elements from the upstream publisher to new elements that it then publishes.
-    public func tryMap<T>(_ transform: @escaping (Self.Output) throws -> T) -> Publishers.TryMap<Self, T>
-}
-
-extension Publisher {
-
     /// Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element.
     ///
     /// - Parameters:
